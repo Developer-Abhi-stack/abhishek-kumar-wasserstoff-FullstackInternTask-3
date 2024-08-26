@@ -1,4 +1,4 @@
-const TopButtons = () => {
+const TopButtons = ({ setQuery }) => {
   const cities = [
     {
       id: 1,
@@ -28,6 +28,7 @@ const TopButtons = () => {
         <button
           key={item.id}
           className="text-lg font-medium hover:bg-gray-700/20 px-3 py-2 rounded-md transition ease-in"
+          onClick={() => setQuery({ q: city.name})}
         >
           {item.name}
         </button>

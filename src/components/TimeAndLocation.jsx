@@ -1,15 +1,16 @@
-
-const TimeAndLocation = () => {
+const TimeAndLocation = ({ weather: {formattedLocalTime, name, country} }) => {
   return (
     <div>
       <div className="flex justify-center items-center my-6">
-        <p className="text-xl font-extralight">Monday,  2 August 2024 | Local time: 04:24 PM</p>
+        <p className="text-xl font-extralight">
+          {formattedLocalTime}
+        </p>
       </div>
       <div className="flex items-center justify-center my-3">
-        <p className="text-3xl font-medium">Mumbai</p>
+        <p className="text-3xl font-medium">{`${name}, ${country}`}</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TimeAndLocation
+export default TimeAndLocation;
