@@ -3,7 +3,7 @@ import { BiSolidDropletHalf } from "react-icons/bi";
 import { GiSunset, GiSunrise } from "react-icons/gi";
 import { FiWind } from "react-icons/fi";
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from "react-icons/md";
-import Cloud_Sun_Icon from "../assets/cloud-sun-icon.png";
+
 
 const TemperatureDetails = ({
   weather: {
@@ -67,6 +67,7 @@ const TemperatureDetails = ({
       value: `${temp_min.toFixed()}°`,
     },
   ];
+
   return (
     <div>
       <div className="flex justify-center items-center py-6 text-cyan-300 text-xl">
@@ -76,28 +77,24 @@ const TemperatureDetails = ({
         <img src={icon} alt="Cloud-sun-icon" className="size-10" />
         <p className="text-5xl">{`${temp.toFixed()}°`}</p>
         <div className="flex flex-col space-y-3 items-start">
-          {
-            VerticalDetails.map(({id, Icon, value, title} )=> (
-              <div key={id} className="flex font-light justify-center items-center text-sm">
+          {VerticalDetails.map(({ id, Icon, value, title }) => (
+            <div key={id} className="flex font-light justify-center items-center text-sm">
               <Icon className="mr-1" size={20} />
               {`${title}:`} <span className="font-medium ml-1">{value}</span>
             </div>
-            ))
-          }
-         
+          ))}
         </div>
       </div>
 
       <div className="flex flex-row justify-center items-center space-x-10 text-sm py-3">
-        {
-          HorizontalDetails.map(({id, Icon, value, title})=> (
-            <div key={id} className="flex flex-row items-center">
-              <Icon size={30} /> 
-              <p className="font-light ml-1">{`${title}:`} <span className="font-medium ml-1">{value}</span></p>
-            </div>
-          ))
-        }
-
+        {HorizontalDetails.map(({ id, Icon, value, title }) => (
+          <div key={id} className="flex flex-row items-center">
+            <Icon size={30} />
+            <p className="font-light ml-1">
+              {`${title}:`} <span className="font-medium ml-1">{value}</span>
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   );

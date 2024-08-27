@@ -9,15 +9,15 @@ const TopButtons = ({ setQuery }) => {
       name: "Mumbai",
     },
     {
-      id: 1,
+      id: 3,
       name: "Chennai",
     },
     {
-      id: 1,
+      id: 4,
       name: "Kolkata",
     },
     {
-      id: 1,
+      id: 5,
       name: "Patna",
     },
   ];
@@ -28,7 +28,7 @@ const TopButtons = ({ setQuery }) => {
         <button
           key={item.id}
           className="text-lg font-medium hover:bg-gray-700/20 px-3 py-2 rounded-md transition ease-in"
-          onClick={() => setQuery({ q: city.name })}
+          onClick={() => setQuery({ q: item.name })}
         >
           {item.name}
         </button>
